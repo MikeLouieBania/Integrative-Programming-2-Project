@@ -1,7 +1,6 @@
 <template>
  <center>
  <v-card class="ma-15" max-width="400">
-    <center><img src="public/profile.jpg" class="img"/></center>
     <v-card-text>
         My name is Mike Louie Bania. I am 21 years old and this is a page about Laboratory Activity 5.
     </v-card-text>
