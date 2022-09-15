@@ -1,7 +1,10 @@
 <template>
-    <p><input type="text" placeholder="Email" v-model="email" /></p>
-    <p><input type="password" placeholder="Password" v-model="password" /></p>
-    <p><v-btn @click="register">Register</v-btn></p>
+    <v-card>
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Password" v-model="password" />
+        <p><v-btn @click="register">Register</v-btn></p>   
+    </v-card>
+
 </template>
   
 <script setup>
