@@ -67,7 +67,6 @@
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
            { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quiz'},
            { title: 'About', icon: 'mdi-account-circle', path: '/aboutapp' },
-           { title: 'Signin', icon: 'mdi-controller-classic', path: '/signin'},
         ])  
   
   const handleSignout = () => {
