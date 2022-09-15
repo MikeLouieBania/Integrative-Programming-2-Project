@@ -94,7 +94,7 @@ router.beforeEach(async(to, from, next) => {
     }
     else {
       alert("You are not Logged In");
-      next("/");
+      next("/signin");
     }
   }
   else {
