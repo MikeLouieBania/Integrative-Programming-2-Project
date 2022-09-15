@@ -17,7 +17,7 @@
         createUserWithEmailAndPassword(getAuth(), email.value, password.value)
         .then((data) => {
             console.log("Register Successfully");
-            router.push('/')
+            router.push('/signin')
         })
         .catch((error) => {
             console.log(error.code);
