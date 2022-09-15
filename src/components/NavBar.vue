@@ -61,7 +61,7 @@
   const drawer = ref(false)
   const isLoggedIn = ref(false)
   const  items =  ref([
-          { title: 'Home', icon: 'mdi-account-circle', path: '/' },
+          { title: 'Home', icon: 'mdi-account-circle', path: '/home' },
            { title: 'Math', icon: 'mdi-calculator-variant', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-file', path: '/stringApp'},
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
