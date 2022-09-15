@@ -87,7 +87,7 @@ const getCurrentUser = () => {
   })
 }
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach((to, from, next) => {
   if(to.matched.some((record) => record.meta.requiresAuth)) {
     if((getAuth) .getCurrentUser) {
       next();
