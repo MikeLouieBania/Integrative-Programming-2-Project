@@ -31,9 +31,8 @@
       </v-list>
     </v-menu>
 
-      <v-btn flat color="grey">
+      <v-btn flat color="grey" @click="handleSignout" v-if="isLoggedIn">
         <span>Sign Out</span>
-        <v-icon right>exit_to_app</v-icon>
       </v-btn>
       
       
@@ -54,21 +53,43 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-    
+  import { onMounted, ref } from 'vue'
+  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+  import { useRouter } from 'vue-router';
+  
+  const router = useRouter();
   const drawer = ref(false)
-
+  const isLoggedIn = ref(false)
   const  items =  ref([
-           { title: 'About', icon: 'mdi-account-circle', path: '/dashboard' },
+          { title: 'Home', icon: 'mdi-account-circle', path: '/' },
            { title: 'Math', icon: 'mdi-calculator-variant', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-file', path: '/stringApp'},
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
            { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quiz'},
-           { title: 'Login', icon: 'mdi-controller-classic', path: '/login'},
-           
-        ])
+           { title: 'About', icon: 'mdi-account-circle', path: '/aboutapp' },
+           { title: 'Signin', icon: 'mdi-controller-classic', path: '/signin'},
+        ])  
+  
+  const handleSignout = () => {
+    signOut(auth).then(() => {
+      router.push('/');
+    })
+  }
 
  function toggleDrawer(){
   return drawer.value = !drawer.value
  }
+
+  let auth;
+  onMounted(() => {
+    auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        isLoggedIn.value = true;
+      }
+      else {
+        isLoggedIn.value = false;
+      }
+    })
+  })
 </script>

@@ -17,7 +17,7 @@
         createUserWithEmailAndPassword(getAuth(), email.value, password.value)
         .then((data) => {
             console.log("Register Successfully");
-            router.push('/quiz')
+            router.push('/')
         })
         .catch((error) => {
             console.log(error.code);
@@ -25,6 +25,3 @@
         })
     }
 </script>
-  
-  
-  
