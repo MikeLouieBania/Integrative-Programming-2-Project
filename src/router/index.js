@@ -94,7 +94,7 @@ router.beforeEach((to, from, next) => {
     }
     else {
       alert("You are not Logged In");
-      next("/signin");
+      next("/");
     }
   }
   else {
