@@ -4,6 +4,7 @@ import StringAppView from '../views/StringAppView.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Vuetify from '../views/Vuetify.vue'
 import Quiz from '../views/Quiz.vue'
+import Login from '../views/Login.vue'
 
 
 const router = createRouter({
@@ -12,7 +13,10 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      /**meta: {
+        requiresAuth: true
+      }*/
     },
     {
       path: '/stringApp',
@@ -33,6 +37,11 @@ const router = createRouter({
       path: '/quiz',
       name: 'quiz',
       component: Quiz
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

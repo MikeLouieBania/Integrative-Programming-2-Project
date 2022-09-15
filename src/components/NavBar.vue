@@ -64,6 +64,7 @@
            { title: 'String App', icon: 'mdi-file', path: '/stringApp'},
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
            { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quiz'},
+           { title: 'Login', icon: 'mdi-controller-classic', path: '/login'},
            
         ])
 
