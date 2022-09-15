@@ -89,7 +89,7 @@ const getCurrentUser = () => {
 
 router.beforeEach((to, from, next) => {
   if(to.matched.some((record) => record.meta.requiresAuth)) {
-    if((getAuth) .getCurrentUser) {
+    if(getAuth().getCurrentUser) {
       next();
     }
     else {
