@@ -19,9 +19,5 @@ const firebaseConfig = {
   measurementId: "G-N4LYXX709N"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
-const auth = getAuth(app)
-
-export { auth }

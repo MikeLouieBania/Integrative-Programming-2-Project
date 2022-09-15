@@ -1,4 +1,4 @@
-/*import { defineStore } from 'pinia'
+import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore({
   id: 'counter',
@@ -14,25 +14,3 @@ export const useCounterStore = defineStore({
     }
   }
 })
-
-export default createStore({
-  state: {
-    user: null
-  },
-  mutations: {
-    SET_USER (state, user) {
-      state.user = user
-    },
-    CLEAR_USER (state) {
-      state.user = null
-    }
-  },
-  actions: {
-    async login ({ commit }, details) {
-
-    },
-    async logout ({ commit }) {
-
-    },
-  }
-})*/

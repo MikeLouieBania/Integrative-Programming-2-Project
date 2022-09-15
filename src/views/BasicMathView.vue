@@ -1,9 +1,9 @@
 <template>
   <center>
-<v-card
+  <v-card
   class="ma-15"
   max-width="500"
->
+  >
   <v-card-title>Arithmethic Operation</v-card-title>
   <v-text-field label="First Input" v-model.number="fNumber"></v-text-field><br>
   <v-text-field label="Second Input" v-model.number="sNumber"></v-text-field>

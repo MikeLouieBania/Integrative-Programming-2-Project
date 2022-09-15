@@ -1,21 +1,30 @@
 <template>
-    <v-card>
-    <v-card-title>LOGIN</v-card-title>
-        <v-text-field
-            :value="userPassword"
-            label="Enter password"
-            hint="Your password passed! Password rules are not meant to be broken!"
-            :append-icon="value ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="() => (value = !value)"
-            :type="value ? 'password' : 'text'"
-            :rules="[rules.password]"
-            @input="(_) => (userPassword = _)"
-        ></v-text-field>
-    </v-card>
-
+    <p><input type="text" placeholder="Email" v-model="email" /></p>
+    <p><input type="password" placeholder="Password" v-model="password" /></p>
+    <p><v-btn @click="register">Register</v-btn></p>
 </template>
-
+  
 <script setup>
-</script>
+    import { getAuth, createUserWithEmailAndPassword } from '@firebase/auth';
+    import { ref } from 'vue'
+    import { useRouter } from 'vue-router';
 
-<style lang="scss"></style>
+    const email = ref ("");
+    const password = ref ("");
+    const router = useRouter();
+
+    function register(){
+        createUserWithEmailAndPassword(getAuth(), email.value, password.value)
+        .then((data) => {
+            console.log("Register Successfully");
+            router.push('/quiz')
+        })
+        .catch((error) => {
+            console.log(error.code);
+            alert(error.message);
+        })
+    }
+</script>
+  
+  
+  
