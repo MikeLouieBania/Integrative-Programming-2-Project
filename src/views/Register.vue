@@ -1,7 +1,13 @@
 <template>
-    <p><input type="text" placeholder="Email" v-model="email" /></p>
-    <p><input type="password" placeholder="Password" v-model="password" /></p>
-    <p><v-btn @click="register">Register</v-btn></p>
+    <center>
+        <v-card class="ma-15" max-width="400">
+        <v-card-title>REGISTER</v-card-title>
+        <p><input type="text" placeholder="Email" v-model="email" /></p>
+        <p><input type="password" placeholder="Password" v-model="password" /></p>
+        <v-btn @click="register">Register</v-btn>
+        </v-card>
+    </center>
+
 </template>
   
 <script setup>
@@ -25,3 +31,17 @@
         })
     }
 </script>
+
+<style>
+
+    .ma-15 {
+        border-radius: 5px;
+    }
+
+    .ma-15 input {
+        margin-top: 5%;
+        margin-bottom: 3%;
+        align-items: center;
+        width: 100%;
+    }
+</style>

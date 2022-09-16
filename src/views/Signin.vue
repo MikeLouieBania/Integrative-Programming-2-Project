@@ -1,10 +1,14 @@
 <template>
-    <v-card>
-    <v-text-field label="Email" v-model="email"></v-text-field>
-    <v-text-field label="Password" v-model="password"></v-text-field>
-    <v-btn @click="register">Login</v-btn><br><br>
-    <v-btn @click="router.push('/register')">Register</v-btn>
-    </v-card>
+    <center>
+        <v-card class="ma-15" max-width="400">
+        <v-card-title>LOGIN</v-card-title>
+            <p><input type="email" placeholder="Email" v-model="email" /></p>
+            <p><input type="password" placeholder="Password" v-model="password"/></p>
+            <v-btn @click="register">Login</v-btn><br><br>
+            <v-btn @click="router.push('/register')">Register</v-btn>
+        </v-card>
+    </center>
+
 </template>
   
 <script setup>
@@ -43,6 +47,19 @@
         })
     }
 </script>
+
+<style>
+
+    .ma-15 {
+        border-radius: 5%;
+    }
+
+    .ma-15 input {
+        margin-top: 5%;
+        align-items: center;
+        width: 100%;
+    }
+</style>
   
   
   
