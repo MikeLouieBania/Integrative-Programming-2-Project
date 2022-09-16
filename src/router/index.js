@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import Home from '../views/Home.vue'
 import BasicMathView from '../views/BasicMathView.vue'
 import StringAppView from '../views/StringAppView.vue'
@@ -7,7 +8,7 @@ import Vuetify from '../views/Vuetify.vue'
 import Quiz from '../views/Quiz.vue'
 import Register from '../views/Register.vue'
 import Signin from '../views/Signin.vue'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
 
 
 const router = createRouter({
@@ -89,7 +90,7 @@ const getCurrentUser = () => {
 
 router.beforeEach( async (to, from, next) => {
   if(to.matched.some((record) => record.meta.requiresAuth)) {
-    if(await getCurrentUser) {
+    if(await getCurrentUser()) {
       next();
     }
     else {

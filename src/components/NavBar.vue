@@ -69,12 +69,6 @@
            { title: 'About', icon: 'mdi-account-circle', path: '/aboutapp' },
         ])  
   
-  const handleSignout = () => {
-    signOut(auth).then(() => {
-      router.push('/');
-    })
-  }
-
  function toggleDrawer(){
   return drawer.value = !drawer.value
  }
@@ -91,4 +85,10 @@
       }
     })
   })
+
+  const handleSignout = () => {
+    signOut(auth).then(() => {
+      router.push("/");
+    })
+  }
 </script>

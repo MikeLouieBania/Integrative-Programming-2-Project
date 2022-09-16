@@ -4,6 +4,7 @@
         <v-card-title>LOGIN</v-card-title>
             <p><input type="email" placeholder="Email" v-model="email" /></p>
             <p><input type="password" placeholder="Password" v-model="password"/></p>
+            <p v-if="errMsg">{{ errMsg }}</p>
             <v-btn @click="register">Login</v-btn><br><br>
             <v-btn @click="router.push('/register')">Register</v-btn>
         </v-card>
@@ -22,7 +23,8 @@
     const router = useRouter();
 
     const register = () => {
-        signInWithEmailAndPassword(getAuth(), email.value, password.value)
+        const auth = getAuth()
+        signInWithEmailAndPassword(auth, email.value, password.value)
         .then((data) => {
             console.log("Login Successfully");
             console.log(auth.currentUser);
@@ -59,6 +61,12 @@
         margin-top: 5%;
         align-items: center;
         width: 100%;
+    }
+
+    .ma-15 p {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        text-align: center;
     }
 </style>
   

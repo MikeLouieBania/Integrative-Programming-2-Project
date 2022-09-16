@@ -17,7 +17,7 @@ const firebaseConfig = {
   measurementId: "G-N4LYXX709N"
 };
 
-initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
 
 loadFonts()
