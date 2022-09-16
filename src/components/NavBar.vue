@@ -61,12 +61,12 @@
   const drawer = ref(false)
   const isLoggedIn = ref(false)
   const  items =  ref([
-          { title: 'Home', icon: 'mdi-account-circle', path: '/home' },
+          { title: 'Home', icon: 'mdi-home', path: '/home' },
            { title: 'Math', icon: 'mdi-calculator-variant', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-file', path: '/stringApp'},
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
            { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quiz'},
-           { title: 'About', icon: 'mdi-account-circle', path: '/aboutapp' },
+           { title: 'About App', icon: 'mdi-account-circle', path: '/dashboard' },
         ])  
   
  function toggleDrawer(){
