@@ -54,7 +54,7 @@
 
 <script setup>
   import { onMounted, ref } from 'vue'
-  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+  import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
   import { useRouter } from 'vue-router';
   
   const router = useRouter();
