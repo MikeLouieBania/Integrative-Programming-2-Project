@@ -5,7 +5,7 @@ import BasicMathView from '../views/BasicMathView.vue'
 import StringAppView from '../views/StringAppView.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Vuetify from '../views/Vuetify.vue'
-import Quiz from '../views/Quiz.vue'
+import QuizAppView from '../views/QuizAppView.vue'
 import Register from '../views/Register.vue'
 import Signin from '../views/Signin.vue'
 
@@ -55,9 +55,9 @@ const router = createRouter({
       }
     },
     {
-      path: '/quiz',
+      path: '/quizAppView',
       name: 'quiz',
-      component: Quiz,
+      component: QuizAppView,
       meta: {
         requiresAuth: true,
       }

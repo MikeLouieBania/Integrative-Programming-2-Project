@@ -65,7 +65,7 @@
            { title: 'Math', icon: 'mdi-calculator-variant', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-file', path: '/stringApp'},
            { title: 'Vuetify', icon: 'mdi-vuetify', path: '/vuetify'},
-           { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quiz'},
+           { title: 'Quiz', icon: 'mdi-controller-classic', path: '/quizAppView'},
            { title: 'About App', icon: 'mdi-account-circle', path: '/dashboard' },
         ])  
   
