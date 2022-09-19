@@ -62,7 +62,7 @@
         >This is the Quiz App page. This contains a simple quiz application about
         sports.</VCardText
       >
-      <VBtn @click="$router.push('/quiz')">GO TO QUIZ APP PAGE</VBtn>
+      <VBtn @click="$router.push('/quizAppView')">GO TO QUIZ APP PAGE</VBtn>
     </VCard>
   </center>
 </template>

@@ -4,7 +4,7 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap"
     rel="stylesheet"
   />
-  m
+
   <center>
     <v-card class="ma-15 text-white" max-width="544" color="#443521">
       <div id="app" style="font-family: 'Montserrat', sans-serif" class="text-white">
