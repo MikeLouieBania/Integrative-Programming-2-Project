@@ -1,7 +1,7 @@
 <template>
   <v-layout class="mt-5" row>
     <v-card class="mx-auto w-25" color="#D5AF76">
-      <v-card-title>Quiz Record</v-card-title>
+      <v-card-title>Quiz History</v-card-title>
       <v-list
         :class="{ active: index == currentIndex }"
         v-for="(history, index) in List"
