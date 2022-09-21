@@ -23,6 +23,11 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import { computed, toDisplayString } from "vue";
+import { auth } from "../firebase";
+import DataService from "../services/DataService";
 export default {
   data() {
     return {
@@ -100,16 +105,38 @@ export default {
     quizCompleted(completed) {
       completed &&
         setTimeout(() => {
+          this.saveHistory();
           this.$emit("quiz-completed", this.score);
         }, 3000);
     },
   },
   methods: {
+    saveHistory() {
+      const today = new Date();
+      var data = {
+        averageScore:
+          Math.floor(
+            (this.score.correctlyAnsweredQuestions / this.score.allQuestions) * 100
+          ) + "%",
+        timeTaken: this.timeTake,
+        timeFinished: today.toGMTString(),
+      };
+      DataService.create(data)
+        .then(() => {
+          this.submitted = true;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
     async fetchQuestions() {
+      const taken = new Date();
+      this.timeTake = taken.toGMTString();
       this.loading = true;
       //fetching questions from api
       let response = await fetch(
-        "https://opentdb.com/api.php?amount=10&category=21&type=multiple"
+        "https://opentdb.com/api.php?amount=10&category=20&difficulty=hard"
       );
       let index = 0; //To identify single answer
       let data = await response.json();
@@ -182,6 +209,23 @@ export default {
   },
   mounted() {
     this.fetchQuestions();
+  },
+
+  setup() {
+    const admin = DataService.isAdmin();
+    const store = useStore();
+    const router = useRouter();
+    auth.onAuthStateChanged((user) => {
+      store.dispatch("fetchUser", user);
+    });
+    const user = computed(() => {
+      return store.getters.user;
+    });
+    const signOut = async () => {
+      await store.dispatch("logOut");
+      router.push("/login");
+    };
+    return { user, signOut, admin };
   },
 };
 </script>

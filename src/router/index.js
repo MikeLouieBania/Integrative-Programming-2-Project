@@ -8,6 +8,7 @@ import Vuetify from '../views/Vuetify.vue'
 import QuizAppView from '../views/QuizAppView.vue'
 import Register from '../views/Register.vue'
 import Signin from '../views/Signin.vue'
+import QuizHistory from '../views/QuizHistory.vue'
 
 
 
@@ -71,6 +72,11 @@ const router = createRouter({
       path: '/',
       name: 'signin',
       component: Signin
+    },
+    {
+      path: '/QuizHistory',
+      name: 'QuizHistory',
+      component: QuizHistory
     }
   ]
 })

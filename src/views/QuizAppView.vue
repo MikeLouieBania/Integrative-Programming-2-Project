@@ -26,6 +26,7 @@
 <script>
 import CustomModal from "./CustomModal.vue";
 import Quiz from "./Quiz.vue";
+
 export default {
   components: { Quiz, CustomModal },
   el: "#app",
