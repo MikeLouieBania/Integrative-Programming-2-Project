@@ -35,7 +35,11 @@
     ></v-text-field>
 
     <v-btn block color="#F1BA67" class="primary" @click="Register">
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary">Register</button> </v-btn
+    ><br />
+
+    <v-btn block color="#F1BA67" class="primary" @click="$router.push('/')">
+      <button type="submit" class="btn btn-primary">Login</button>
     </v-btn>
   </v-card>
 </template>
