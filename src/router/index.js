@@ -76,7 +76,10 @@ const router = createRouter({
     {
       path: '/QuizHistory',
       name: 'QuizHistory',
-      component: QuizHistory
+      component: QuizHistory,
+      meta: {
+        requiresAuth: true,
+      }
     }
   ]
 })
