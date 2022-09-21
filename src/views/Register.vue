@@ -60,7 +60,7 @@ export default {
           password: password.value,
           name: name.value,
         });
-        router.push("/");
+        router.push("/dashboard");
       } catch (err) {
         error.value = err.message;
       }
